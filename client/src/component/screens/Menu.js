@@ -86,7 +86,7 @@ function Menu() {
         </Grid>
         {/* xs Filter */}
         <Grid item xs={12} md={2} sx={{padding:0,background:'rgb(250,100,250, 0.3)', display: { xs: "block", md: "none" }}}>
-        <Box sx={{ display: "flex", justifyContent: "center", padding:0}}>
+        <Box sx={{ display: "flex", justifyContent: "center", padding:0, marginTop:'30px'}}>
             <Tabs              
               indicatorColor="secondary" variant="scrollable" scrollButtons allowScrollButtonsMobile                       
             >

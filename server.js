@@ -26,7 +26,7 @@ app.use(cookieParser(process.env.REF_TOKEN_SECRET));
 
 app.use(helmet.contentSecurityPolicy({
     directives: {
-        imgSrc: ["'self'", '.cloudinary.com', '.google.com','.pexels.com']
+        imgSrc: ["'self'", '*.cloudinary.com', '*.google.com','*.pexels.com']
     }
 })
 )
@@ -46,10 +46,10 @@ app.use(`/api/v1/order`, orderRoute)
 __dirname = path.resolve();
 
 if(process.env.NODE_ENV === "production" || process.env.NODE_ENV === "staging") {
-    app.use(express.static(path.join(__dirname, './client/build')));
+    app.use(express.static('client/build'));
 
     app.use('*', (req, res) => {
-        res.sendFile(path.join(_dirname + `../client/build/index.html`))
+        res.sendFile(path.join(_dirname + `/client/build/index.html`))
     })
 }
 
